@@ -1,42 +1,107 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+body {
+  height: 100vh; /* full viewport height */
+  margin: 0;
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  align-items: center; /* vertical centering */
+  background: #f2f6fc;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.auth-container {
+  background-color: white;
   padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(0, 0, 0, 0.1);
+  width: 300px;
+  max-width: 90%;
+
+  margin-left: 550px;
+  margin-top: 140px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #1d1d1d;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  width: 100%;
+  margin-left: 2px;
+}
+
+.input-group h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 7.5px;
+  font-size: 1rem;
+  background-color: #e2e8f0;
+  color: #1a202c;
+  transition: border 0.2s;
+}
+
+input :focus {
+  outline: none;
+  border-color: #b5b8bb;
+  background-color: #edf2f7;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #6c63ff;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+button[type="submit"]:hover {
+  background-color: #574fe2;
+}
+
+.auth-container > button {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: #6c63ff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.auth-container p {
+  font-size: 0.9rem;
   text-align: center;
 }
+.auth-text {
+  color: #555555;
+  font-weight: 400px;
+}
+.auth-link {
+  color: #6c63ff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.auth-link:hover {
+  color: #0c00f8;
+}
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 400px) {
+  .auth-container {
+    width: 90%;
+    padding: 1.5rem;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

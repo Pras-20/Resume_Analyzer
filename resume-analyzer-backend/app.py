@@ -70,7 +70,7 @@ def register():
         return jsonify({"error":"Please Fill all the Entries to proceed"}),400
     
     if User.query.filter((User.username==username)|(User.email==email)).first(): ##checking whether the user's name already exist or not
-        return jsonify({"error":"This User name already exist!"}),409
+        return jsonify({"error":"This User name already exists!"}),409
     
     hashed=bcrypt.hashpw(password.encode('utf-8'),bcrypt.gensalt()) ##this is just generic password hashing for data Encryption 
 
@@ -91,7 +91,7 @@ def login():
 
     if user and bcrypt.checkpw(data['password'].encode('utf-8'),user.password_hash):
         token=jwt.encode({'user_id':user.id,'exp':datetime.datetime.utcnow() +  datetime.timedelta(hours=2)},app.config['SECRET_KEY'],algorithm='HS256')
-        return jsonify({'token':token})
+        return jsonify({'message':'You have successfully logged in','token':token})
     else:
         return jsonify({'message':"invalid email or password"}),401
     
