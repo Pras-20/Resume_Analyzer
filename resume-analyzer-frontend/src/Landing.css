@@ -1,0 +1,239 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+.landing-page-wrapper {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #ede9fe, #f5f3ff);
+  color: #1e1b3a;
+  scroll-behavior: smooth;
+}
+
+.landing-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.landing-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120px 5vw 60px;
+  overflow-y: auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: -500px;
+}
+
+.landing-container section {
+  width: 100%;
+  margin-bottom: 60px;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+section:nth-child(1) {
+  animation-delay: 0.1s;
+}
+section:nth-child(2) {
+  animation-delay: 0.3s;
+}
+section:nth-child(3) {
+  animation-delay: 0.5s;
+}
+section:nth-child(4) {
+  animation-delay: 0.7s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  margin-bottom: 20px;
+  color: #7c3aed;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.hero p {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  margin-bottom: 40px;
+  color: #4c1d95;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+/* Call to action buttons */
+.cta-btn {
+  background-color: #8b5cf6;
+  color: white;
+  border: none;
+  padding: 16px 44px;
+  font-size: 1.2rem;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(140, 90, 250, 0.35);
+  transition: background-color 0.3s ease, transform 0.25s ease,
+    box-shadow 0.3s ease;
+  font-weight: 600;
+  user-select: none;
+}
+
+.cta-btn:hover,
+.cta-btn:focus {
+  background-color: #a78bfa;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(140, 90, 250, 0.45);
+  outline: none;
+}
+
+.cta-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(140, 90, 250, 0.25);
+}
+
+/* Why use and How it works sections */
+.why-use h2,
+.how-it-works h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #5b21b6;
+  border-bottom: 3px solid #9333ea;
+  padding-bottom: 6px;
+  max-width: max-content;
+}
+
+.why-use ul,
+.how-it-works ol {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  list-style: none;
+  color: #3e0766;
+}
+
+.why-use li,
+.how-it-works li {
+  margin-bottom: 18px;
+  padding-left: 2.2em;
+  position: relative;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Checkmark for why-use list items */
+.why-use li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #9333ea;
+  font-weight: 900;
+  font-size: 1.3rem;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Numbering for how-it-works */
+.how-it-works li::before {
+  counter-increment: step-counter;
+  content: counter(step-counter) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #6d28d9;
+  user-select: none;
+}
+
+.how-it-works {
+  counter-reset: step-counter;
+}
+
+/* Get started section */
+.get-started {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Footer styling */
+.footer {
+  width: 100vw; /* full viewport width */
+  position: relative; /* or fixed/sticky if you want */
+  left: 0; /* align to left edge */
+  margin: 0; /* remove side margins */
+  padding: 20px 15px;
+  box-sizing: border-box; /* ensure padding is included in width */
+  background: #7c3aed;
+  color: white;
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 500;
+  user-select: none;
+  box-shadow: 0 -3px 10px rgba(124, 60, 237, 0.5);
+  z-index: 10; /* keep on top */
+}
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+  .why-use li,
+  .how-it-works li {
+    font-size: 1rem;
+    padding-left: 1.8em;
+  }
+  .cta-btn {
+    padding: 14px 32px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .why-use li,
+  .how-it-works li {
+    font-size: 0.95rem;
+  }
+  .cta-btn {
+    padding: 12px 28px;
+    font-size: 0.9rem;
+  }
+}

@@ -45,7 +45,8 @@ function AuthPage() {
       setMessage(response.data.message || "Success!");
       if (isLogin) {
         localStorage.setItem("token", response.data.token);
-        navigate("/landing");
+        setIsLoggedIn(true);
+        navigate("/");
       }
     } catch (err) {
       setMessage(err.response?.data?.error || "Unkown Error");

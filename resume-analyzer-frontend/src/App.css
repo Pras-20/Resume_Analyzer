@@ -1,11 +1,15 @@
 body {
-  height: 100vh; /* full viewport height */
+  height: 100vh;
   margin: 0;
   display: flex;
-  justify-content: center; /* horizontal centering */
-  align-items: center; /* vertical centering */
+  justify-content: center;
+  align-items: center;
   background: #f2f6fc;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.maincontent {
+  padding-top: 80px;
+  min-height: 100vh;
 }
 
 .auth-container {
@@ -13,11 +17,11 @@ body {
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgb(0, 0, 0, 0.1);
-  width: 300px;
+  width: 375px;
   max-width: 90%;
 
-  margin-left: 550px;
-  margin-top: 140px;
+  margin-left: 55px;
+  margin-top: -500px;
 }
 
 h2 {
