@@ -29,11 +29,15 @@
 }
 
 .gooey-nav-container {
-  position: relative; /* or fixed/sticky if you want */
-  height: 45px; /* fixed height */
-  padding: 0 20px; /* consistent horizontal padding */
-  line-height: 60px; /* vertically center text/buttons */
+  position: relative;
+  height: 60px; /* match your line-height */
+  padding: 0 20px;
+  line-height: 60px;
   box-sizing: border-box;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .gooey-nav-container nav {

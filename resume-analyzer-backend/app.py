@@ -6,11 +6,19 @@ import jwt
 import datetime
 from functools import wraps
 import os 
+from analyzer_routes import analyzer_bp 
 from dotenv import load_dotenv
+from auth_utils import token_required
+
 
 
 app=Flask(__name__)
+
+
+app.register_blueprint(analyzer_bp, url_prefix='/api')
+
 CORS(app)
+
 
 app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATION']=False 
@@ -31,24 +39,6 @@ class User(db.Model):
 with app.app_context():
     db.create_all()
 
-def token_required(f):
-    @wraps(f)
-    def decorated(*args,**kwargs):
-        token=request.headers.get('Authorization')
-
-        if token:
-            try:
-                token=token.split(" ")[1]
-                data=jwt.decode(token,app.config['SECRET_KEY'],algorithms=["HS256"])
-                current_user=User.query.get(data['user_id'])
-
-            except:
-                return jsonify({"message":"Invalid or expired token"}),401
-        else:
-            return jsonify({"message","Token is missing"}),401
-
-        return f(current_user,*args,**kwargs)
-    return decorated
 
 
 
@@ -102,6 +92,7 @@ def profile(current_user):
         'username':current_user.username,
         'email':current_user.email
     })
+
 
 
 if __name__=='__main__':
