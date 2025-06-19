@@ -12,6 +12,8 @@ from auth_utils import token_required
 import os 
 from dotenv import load_dotenv
 
+from auth_utils import token_required 
+
 load_dotenv()
 
 
@@ -77,6 +79,7 @@ def generate_detailed_feedback(jd_text,resume_text):
     prompt=f"""
     You are a helpful assistant that reads a job description and a candidate's resume. 
     Based on the content, provide detailed and constructive feedback on how the candidate can improve their resume to better fit the job description.
+    try addressing the candidate with his name from the resume
     
     Job Description:
     {jd_text}
@@ -114,9 +117,9 @@ def generate_detailed_feedback(jd_text,resume_text):
 
 
 @analyzer_bp.route('/analyze',methods=['POST'])
-##@token_required
+@token_required
 
-def analyze():
+def analyze(current_user):
 
     if 'resume' not in request.files or 'jobdescription' not in request.form:
         return jsonify({"error":"Missing resume or job description"}),400

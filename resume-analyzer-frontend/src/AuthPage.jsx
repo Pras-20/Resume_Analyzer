@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function AuthPage() {
   const navigate = useNavigate();
@@ -24,7 +24,15 @@ function AuthPage() {
       return newIsLogin;
     });
   };
+  useEffect(() => {
+    if (location.state?.logoutMessage) {
+      setIsLogin(true);
+      setFormData({ username: "", email: "", password: "" });
+      setMessage(location.state.logoutMessage);
 
+      window.history.replaceState({}, document.title);
+    }
+  }, [location.state]);
   // adding no scroll feature here
 
   const handleChange = (e) => {

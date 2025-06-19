@@ -9,15 +9,16 @@ const GooeyNavBarWrapper = ({ isLoggedIn, handleLogout }) => {
   ];
 
   if (isLoggedIn) {
-    items.push({ label: "Profile", href: "/profile" });
-    items.push({ label: "Logout", href: "/" });
+    items.push({ label: "Logout", href: "/auth" });
   } else {
     items.push({ label: "Login/SignUp", href: "/auth" });
   }
 
   const handleItemClick = (item) => {
     if (item.label === "Logout") {
+      localStorage.removeItem("token");
       handleLogout();
+      window.local.href = "/auth";
     }
   };
 

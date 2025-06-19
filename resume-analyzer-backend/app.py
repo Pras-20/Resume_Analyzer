@@ -1,6 +1,5 @@
 from flask import Flask,request,jsonify 
 from flask_cors import CORS
-from flask_sqlalchemy import SQLAlchemy
 import bcrypt 
 import jwt
 import datetime
@@ -10,7 +9,7 @@ from analyzer_routes import analyzer_bp
 from dotenv import load_dotenv
 from auth_utils import token_required
 
-
+from models import db, User
 
 app=Flask(__name__)
 
@@ -24,16 +23,7 @@ app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATION']=False 
 app.config['SECRET_KEY']=os.getenv('SECRET_KEY') ##need to change before checking with postman 
 
-##initiates app db object
-db=SQLAlchemy(app)
-
-#User model (basically the essentials for keeping track of user info)
-class User(db.Model):
-    id=db.Column(db.Integer,primary_key=True)
-    username=db.Column(db.String(80),nullable=False)
-    email=db.Column(db.String(120),nullable=False)
-    password_hash=db.Column(db.LargeBinary,nullable=False)
-
+db.init_app(app)
 
 #either creates the database if it doesnt exist or it doesnt create it..it just updates the database
 with app.app_context():

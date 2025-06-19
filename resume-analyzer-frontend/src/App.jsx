@@ -11,9 +11,11 @@ import "./App.css";
 import LandingPage from "./Landing";
 import About from "./About";
 
+import AnalyzerPage from "./Analyzer";
+
 // const AboutPage = () => <div>This is the About Page</div>;
 const ProfilePage = () => <div>This is your Profile Page</div>;
-const AnalyzerPage = () => <div>This is your Analyzer Page</div>;
+// const AnalyzerPage = () => <div>This is your Analyzer Page</div>;
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -28,6 +30,9 @@ function App() {
   const handleLogout = () => {
     localStorage.removeItem("token");
     setIsLoggedIn(false);
+    navigate("/auth", {
+      state: { logoutMessage: "You have successfully logged out." },
+    });
   };
 
   return (
