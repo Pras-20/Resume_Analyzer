@@ -1,0 +1,144 @@
+/* about.css */
+
+.about-container {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #1e1b3a;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  margin-top: -580px;
+  animation: fadeSlideUp 0.8s ease-out both;
+}
+
+.about-heading {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2.6rem;
+  color: #5b21b6;
+  text-shadow: 0 2px 6px rgba(91, 33, 182, 0.25);
+  animation: fadeSlideUp 0.8s ease-out both;
+  animation-delay: 0.1s;
+}
+
+.about-section {
+  margin-top: 2rem;
+  line-height: 1.75;
+  font-size: 1.15rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.about-section h2 {
+  border-bottom: 3px solid #9333ea;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  color: #4c1d95;
+}
+
+.about-list {
+  padding-left: 1.5rem;
+  color: #3e0766;
+}
+
+.about-list li {
+  margin-bottom: 0.6rem;
+  list-style: none;
+  position: relative;
+  padding-left: 1.8em;
+  font-size: 1.1rem;
+}
+
+.about-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #9333ea;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* Prevent layout shift for ProfileCard */
+.about-container .pc-card-wrapper {
+  margin: 2rem auto 3rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: none !important;
+  perspective: none !important;
+  animation: fadeSlideUp 0.8s ease-out both;
+  animation-delay: 0.3s;
+}
+
+/* Optional float effect for the card itself (remove comment to enable) */
+/*
+.pc-card {
+  animation: float 3.5s ease-in-out infinite alternate;
+}
+*/
+
+/* Animations */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+  .about-container {
+    margin-top: -300px;
+    padding: 1.5rem;
+  }
+
+  .about-heading {
+    font-size: 2.2rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .about-section,
+  .about-list li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-heading {
+    font-size: 2rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .about-section,
+  .about-list li {
+    font-size: 0.95rem;
+  }
+}

@@ -9,8 +9,9 @@ import AuthPage from "./AuthPage";
 import GooeyNavBarWrapper from "./components/GooeyNav/GooeyNavBar";
 import "./App.css";
 import LandingPage from "./Landing";
+import About from "./About";
 
-const AboutPage = () => <div>This is the About Page</div>;
+// const AboutPage = () => <div>This is the About Page</div>;
 const ProfilePage = () => <div>This is your Profile Page</div>;
 const AnalyzerPage = () => <div>This is your Analyzer Page</div>;
 
@@ -35,7 +36,7 @@ function App() {
       <div className="main-content">
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/about" element={<AboutPage />} />
+          <Route path="/about" element={<About />} />
           <Route
             path="/auth"
             element={<AuthPage setIsLoggedIn={setIsLoggedIn} />}
@@ -44,7 +45,7 @@ function App() {
             path="/Analyzer"
             element={<AnalyzerPage setIsLoggedIn={setIsLoggedIn} />}
           />
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/About" element={<ProfilePage />} />
         </Routes>
       </div>
     </Router>
