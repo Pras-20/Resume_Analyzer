@@ -13,11 +13,10 @@ import About from "./About";
 
 import AnalyzerPage from "./Analyzer";
 
-// const AboutPage = () => <div>This is the About Page</div>;
 const ProfilePage = () => <div>This is your Profile Page</div>;
-// const AnalyzerPage = () => <div>This is your Analyzer Page</div>;
 
-function App() {
+function AppWrapper() {
+  const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -36,7 +35,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <>
       <GooeyNavBarWrapper isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
       <div className="main-content">
         <Routes>
@@ -53,6 +52,14 @@ function App() {
           <Route path="/About" element={<ProfilePage />} />
         </Routes>
       </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppWrapper />
     </Router>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import ProfileCard from "./components/ProfileCard/ProfileCard";
 import "./About.css";
-
+import propic from "./assets/profilepic.jpg";
 function About() {
   return (
     <div className="about-container">
@@ -12,7 +12,7 @@ function About() {
         handle="prasannakumar-pandurangan"
         status="Online"
         contactText="Get in Touch"
-        avatarUrl="/resume-analyzer-frontend/src/assets/profilepic.jpg"
+        avatarUrl={propic}
         showUserInfo={true}
         enableTilt={true}
         onContactClick={() =>
@@ -24,12 +24,17 @@ function About() {
       />
 
       <section className="about-section">
-        <h2>About Me</h2>
-        <p>
-          I'm a focused and determined computer science student passionate about
-          AI, machine learning, and full-stack development. I enjoy solving
-          complex problems, building intelligent systems, and exploring robotics
-          and automation.
+        <h1 className="about-heading">About Me</h1>
+        <p
+          style={{
+            textAlign: "center",
+            fontStyle: "italic",
+            color: "#6a4be4",
+            marginTop: "-1.5rem",
+            marginBottom: "2rem",
+          }}
+        >
+          "Passionate about building the future with AI and Robotics"
         </p>
       </section>
 

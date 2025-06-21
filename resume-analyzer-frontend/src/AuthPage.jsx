@@ -2,19 +2,23 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 
-function AuthPage() {
+function AuthPage({ setIsLoggedIn }) {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const [isLogin, setIsLogin] = useState(true);
+
   const [formData, setFormData] = useState({
     username: " ",
     email: " ",
     password: "",
   });
+
   const [message, setMessage] = useState("");
 
   const toggleMode = () => {
-    setIsLogin((prevIsLogin) => {
-      const newIsLogin = !prevIsLogin;
+    setIsLogin((prev) => {
+      const newIsLogin = !prev;
       setMessage("");
       setFormData(
         newIsLogin
@@ -101,6 +105,7 @@ function AuthPage() {
               value={formData.password}
               onChange={handleChange}
               required
+              autoComplete={isLogin ? "current-password" : "new-password"}
             />
           </div>
           <br></br>
