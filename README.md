@@ -14,6 +14,32 @@ A full-stack AI-powered web application that analyzes resumes and provides both 
 
 ---
 
+## 🖼️ Screenshots
+
+### 🏠 Homepage
+
+![Homepage](images/LandingPage.png)
+
+---
+
+### 📤 Resume Analyzer Page
+
+![Resume Upload](images/AnalyzerPage.png)
+
+---
+
+### 📊 Authentication Login/Signup Page
+
+![Login Section](images/AuthPage.png)
+
+---
+
+### 📊 AboutPage Login/Signup Page
+
+![About Section](images/About.png)
+
+---
+
 ## 🛠️ Tech Stack
 
 | Layer    | Technology                              |
@@ -30,6 +56,10 @@ A full-stack AI-powered web application that analyzes resumes and provides both 
 
 ```
 resume-analyzer/
+├── images/
+│   ├── homepage.png
+│   ├── upload_resume.png
+│   └── feedback_section.png
 ├── backend/
 │   ├── app.py
 │   ├── analyzer_routes.py
