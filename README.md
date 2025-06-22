@@ -1,3 +1,6 @@
+<p align="center">
+<img src="https://github.com/Pras-20/Resume_Analyzer/blob/main/images/LandingPage.png" alt="Resume Analyzer App" width="800"/></p>
+
 # 🧠 Resume Analyzer App
 
 A full-stack AI-powered web application that analyzes resumes and provides both general and detailed improvement suggestions. Built using React.js for the frontend, Flask for the backend, and integrated with state-of-the-art NLP models from HuggingFace.
