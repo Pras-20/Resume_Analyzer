@@ -36,7 +36,7 @@ A full-stack AI-powered web application that analyzes resumes and provides both 
 
 ### 📊 AboutPage Login/Signup Page
 
-![About Section](images/About.png)
+![About Section](images/AboutPage.png)
 
 ---
 
@@ -232,7 +232,7 @@ Key packages:
 
 **Prasanna Kumar**  
 Aspiring AI & Robotics Developer  
-🔗 [GitHub Profile](https://github.com/prasannakumar-pandurangan)
+🔗 [GitHub Profile](https://github.com/Pras-20)
 
 ---
 
