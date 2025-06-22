@@ -28,29 +28,27 @@ A full-stack AI-powered web application that analyzes resumes and provides both 
 
 ## 📁 Folder Structure
 
+```
 resume-analyzer/
 ├── backend/
-│ ├── app.py
-│ ├── analyzer_routes.py
-│ ├── auth_utils.py
-│ ├── requirements.txt
-│ ├── ...
+│   ├── app.py
+│   ├── analyzer_routes.py
+│   ├── auth_utils.py
+│   ├── requirements.txt
+│   └── ...
 ├── frontend/
-│ ├── package.json
-│ ├── vite.config.js
-│ ├── src/
-│ │ ├── components/
-│ │ ├── pages/
-│ │ └── ...
-│ └── public/
-├── setup.bat # Windows CMD setup script
-├── setup.ps1 # Windows PowerShell setup script
-├── setup.sh # Linux/macOS setup script
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── ...
+│   └── public/
+├── setup.bat         # Windows CMD setup script
+├── setup.ps1         # Windows PowerShell setup script
+├── setup.sh          # Linux/macOS setup script
 └── README.md
-
-yaml
-Copy
-Edit
+```
 
 ---
 
@@ -58,155 +56,162 @@ Edit
 
 Create a `.env` file in the `backend/` directory with the following:
 
-```env
+```
 FLASK_APP=app.py
 FLASK_ENV=development
 SECRET_KEY=your_flask_secret_key
 JWT_SECRET_KEY=your_jwt_key
 DATABASE_URI=sqlite:///resume.db
-Make sure to keep secret keys hidden in production (e.g., using .gitignore).
+```
 
-🔧 Setup Script Details
-This project includes auto-install scripts to simplify installation across all operating systems.
-
-###📁 Script Files
-###File	Platform	Description
-setup.bat	Windows (CMD)	Double-click or run via cmd.exe
-setup.ps1	Windows (PowerShell)	Run in PowerShell with execution permissions
-setup.sh	Linux / macOS	Bash script for Unix-based systems
-
-
-🪟 Windows CMD (setup.bat)
-bash
-Copy
-Edit
-cd project-folder
-setup.bat
-
-
-💻 Windows PowerShell (setup.ps1)
-powershell
-Copy
-Edit
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
-.\setup.ps1
-
-
-🐧 Linux/macOS (setup.sh)
-bash
-Copy
-Edit
-chmod +x setup.sh
-./setup.sh
-
-
-🧪 How to Run the Project
-1. Start Backend
-bash
-Copy
-Edit
-cd backend
-venv\Scripts\activate          # Windows
-# source venv/bin/activate    # macOS/Linux
-python app.py
-Flask server will usually run at: http://localhost:5000
-
-
-2. Start Frontend
-bash
-Copy
-Edit
-cd frontend
-npm run dev
-React frontend will run at: http://localhost:5173
-
-
-🌐 API Endpoints
-Endpoint	Method	Description
-/register	POST	Register a new user
-/login	POST	Login with credentials
-/analyze/resume	POST	Upload resume and receive feedback
-/user/history	GET	Get previous resume analysis results
-
-
-📦 Backend Requirements (Flask, ML, OCR)
-All Python packages are listed in backend/requirements.txt. Install them with:
-
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Includes:
-
-Flask
-
-Flask-CORS
-
-Flask-SQLAlchemy
-
-bcrypt
-
-transformers
-
-sentence-transformers
-
-pytesseract, PyMuPDF (for OCR and parsing)
-
-
-📦 Frontend Requirements (React.js)
-Dependencies are tracked in frontend/package.json. Install using:
-
-bash
-Copy
-Edit
-cd frontend
-npm install
-Includes:
-
-React 19+
-
-React Router
-
-Framer Motion
-
-GSAP
-
-Axios
-
-Vite
-
-
-🌍 Deployment Tips
-Use Render, Railway, or Heroku for deploying the Flask backend.
-
-Use Vercel or Netlify for deploying the React frontend.
-
-Make sure to update API URLs (axios base URL) in production.
-
-
-👤 Author
-Prasanna Kumar
-Aspiring AI & Robotics Developer
-🔗 GitHub Profile
-
-
-📜 License
-This project is licensed under the MIT License.
-
-yaml
-Copy
-Edit
+> ☑️ Make sure to keep secret keys hidden in production (e.g., using `.gitignore`).
 
 ---
 
+## 🔧 Setup Script Details
 
-### 🔚 You’re All Set!
+This project includes auto-install scripts to simplify installation across all operating systems.
 
-This README is now:
-- Beginner friendly
+### 📁 Script Files
+
+| File        | Platform             | Description                                  |
+| ----------- | -------------------- | -------------------------------------------- |
+| `setup.bat` | Windows (CMD)        | Double-click or run via `cmd.exe`            |
+| `setup.ps1` | Windows (PowerShell) | Run in PowerShell with execution permissions |
+| `setup.sh`  | Linux / macOS        | Bash script for Unix-based systems           |
+
+---
+
+### 🪟 Windows CMD (`setup.bat`)
+
+```
+cd project-folder
+setup.bat
+```
+
+---
+
+### 💻 Windows PowerShell (`setup.ps1`)
+
+```
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+.\setup.ps1
+```
+
+---
+
+### 🐧 Linux/macOS (`setup.sh`)
+
+```
+chmod +x setup.sh
+./setup.sh
+```
+
+---
+
+## 🧪 How to Run the Project
+
+### 1. Start Backend
+
+```
+cd backend
+venv\Scripts ctivate          # Windows
+# source venv/bin/activate    # macOS/Linux
+python app.py
+```
+
+Flask server will usually run at: `http://localhost:5000`
+
+---
+
+### 2. Start Frontend
+
+```
+cd frontend
+npm run dev
+```
+
+React frontend will run at: `http://localhost:5173`
+
+---
+
+## 🌐 API Endpoints
+
+| Endpoint          | Method | Description                          |
+| ----------------- | ------ | ------------------------------------ |
+| `/register`       | POST   | Register a new user                  |
+| `/login`          | POST   | Login with credentials               |
+| `/analyze/resume` | POST   | Upload resume and receive feedback   |
+| `/user/history`   | GET    | Get previous resume analysis results |
+
+---
+
+## 📦 Backend Requirements (Flask, ML, OCR)
+
+Install all dependencies with:
+
+```
+pip install -r requirements.txt
+```
+
+Key packages:
+
+- Flask, Flask-CORS, Flask-SQLAlchemy
+- bcrypt, PyJWT
+- transformers, sentence-transformers
+- pytesseract, PyMuPDF
+
+---
+
+## 📦 Frontend Requirements (React.js)
+
+Install all dependencies with:
+
+```
+cd frontend
+npm install
+```
+
+Key packages:
+
+- React 19+
+- React Router
+- Framer Motion
+- GSAP
+- Axios
+- Vite
+
+---
+
+## 🌍 Deployment Tips
+
+- Deploy backend using **Render**, **Railway**, or **Heroku**
+- Deploy frontend using **Vercel** or **Netlify**
+- In production, update the base URL in all Axios API calls to match the deployed backend
+
+---
+
+## 👤 Author
+
+**Prasanna Kumar**  
+Aspiring AI & Robotics Developer  
+🔗 [GitHub Profile](https://github.com/prasannakumar-pandurangan)
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## ✅ You’re All Set!
+
+This README is:
+
+- Beginner-friendly
 - Cross-platform ready
 - Deployment aware
 - Technically thorough
 
-Would you like this saved as a downloadable `.md` file?
-```
+Happy coding! 💻🚀
