@@ -113,10 +113,17 @@ chmod +x setup.sh
 
 ### 1. Start Backend
 
+> # Windows
+
 ```
 cd backend
-venv\Scripts ctivate          # Windows
-# source venv/bin/activate    # macOS/Linux
+venv\Scripts\activate
+```
+
+> #macOS/Linux
+
+```
+source venv/bin/activate
 python app.py
 ```
 
