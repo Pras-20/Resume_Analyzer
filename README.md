@@ -69,8 +69,8 @@ Make sure to keep secret keys hidden in production (e.g., using .gitignore).
 🔧 Setup Script Details
 This project includes auto-install scripts to simplify installation across all operating systems.
 
-📁 Script Files
-File	Platform	Description
+###📁 Script Files
+###File	Platform	Description
 setup.bat	Windows (CMD)	Double-click or run via cmd.exe
 setup.ps1	Windows (PowerShell)	Run in PowerShell with execution permissions
 setup.sh	Linux / macOS	Bash script for Unix-based systems
