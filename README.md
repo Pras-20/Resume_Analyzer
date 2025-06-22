@@ -149,7 +149,7 @@ React frontend will run at: `http://localhost:5173`
 | `/register`       | POST   | Register a new user                  |
 | `/login`          | POST   | Login with credentials               |
 | `/analyze/resume` | POST   | Upload resume and receive feedback   |
-| `/user/history`   | GET    | Get previous resume analysis results |
+| `/about`          | GET    | just a page about who am i and stuff |
 
 ---
 
